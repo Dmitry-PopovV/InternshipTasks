@@ -12,7 +12,7 @@ namespace FigureAreaTest
             string type = null;
             double[] par = { 1 };
 
-            double res = FigureArea.find(type, par);
+            double res = FigureArea.calc(type, par);
 
         }
 
@@ -23,7 +23,7 @@ namespace FigureAreaTest
             string type = "a";
             double[] par = { 1 };
 
-            double res = FigureArea.find(type, par);
+            double res = FigureArea.calc(type, par);
 
         }
     }
@@ -39,7 +39,7 @@ namespace FigureAreaTest
             double[] resolts = { 0, 3.1415926535897932384626433832795, 12.566370614359172953850573533118 };
             for (int i = 0; i < par.Length; i++)
             {
-                double res = FigureArea.find(type, par[i]);
+                double res = FigureArea.calc(type, par[i]);
                 Assert.AreEqual(resolts[i], res);
             }
         }
@@ -51,7 +51,7 @@ namespace FigureAreaTest
             string type = "circle";
             double[] par = null;
 
-            double res = FigureArea.find(type, par);
+            double res = FigureArea.calc(type, par);
 
         }
 
@@ -64,7 +64,7 @@ namespace FigureAreaTest
 
             for (int i = 0; i < par.Length; i++)
             {
-                double res = FigureArea.find(type, par[i]);
+                double res = FigureArea.calc(type, par[i]);
             }
         }
     }
@@ -80,7 +80,7 @@ namespace FigureAreaTest
             double[] resolts = { 0, 0.43301270189221932338, 2.8284271247461903 };
             for (int i = 0; i < par.Length; i++)
             {
-                double res = FigureArea.find(type, par[i]);
+                double res = FigureArea.calc(type, par[i]);
                 Assert.AreEqual(resolts[i], res);
             }
         }
@@ -92,7 +92,7 @@ namespace FigureAreaTest
             string type = "triangle";
             double[] par = null;
 
-            double res = FigureArea.find(type, par);
+            double res = FigureArea.calc(type, par);
 
         }
 
@@ -105,7 +105,7 @@ namespace FigureAreaTest
 
             for (int i = 0; i < par.Length; i++)
             {
-                double res = FigureArea.find(type, par[i]);
+                double res = FigureArea.calc(type, par[i]);
             }
         }
     }
