@@ -1,10 +1,5 @@
 internal class Circle : Figure
 {
-    public Circle()
-    {
-        _type = "circle";
-    }
-
     public override bool checkParam(params double[] par)
     {
         if (par.Length != 1)
@@ -17,7 +12,7 @@ internal class Circle : Figure
         }
     }
 
-public override double area(params double[] r)
+    public override double area(params double[] r)
     {
         checkParam(r);
         if (r[0] < 0)

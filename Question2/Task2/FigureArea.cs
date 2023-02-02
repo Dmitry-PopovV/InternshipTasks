@@ -23,7 +23,7 @@
 
             foreach (Figure i in list)
             {
-                if (i.type == type)
+                if (i.ToString() == type)
                 {
                     return i.area(par);
                 }

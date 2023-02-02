@@ -1,10 +1,5 @@
 internal class Triangle : Figure
 {
-    public Triangle()
-    {
-        _type = "triangle";
-    }
-
     public override bool checkParam(params double[] par)
     {
         if (par.Length != 3)
