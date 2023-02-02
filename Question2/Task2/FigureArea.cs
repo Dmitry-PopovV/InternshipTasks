@@ -4,11 +4,9 @@
     {
         static FigureArea()
         {
-            list = new List<Figure>
-            {
-                new Circle(),
-                new Triangle()
-            };
+            dict = new Dictionary<string, Figure>();
+            addFigure(new Circle());
+            addFigure(new Triangle());
         }
 
         public static double calc(string type, params double[] par)
@@ -19,25 +17,30 @@
             if (par == null)
                 throw new ArgumentNullException("par");
 
-            ref List<Figure> list = ref FigureArea.getList();
+            ref Dictionary<string, Figure> dict = ref FigureArea.getDict();
 
-            foreach (Figure i in list)
+            try
             {
-                if (i.ToString() == type)
-                {
-                    return i.area(par);
-                }
+                return dict[type].area(par);
             }
-            throw new ArgumentException(String.Format("Figure type \"{0}\" not found", type));
+            catch(KeyNotFoundException)
+            {
+                throw new ArgumentException(String.Format("Figure type \"{0}\" not found", type));
+            }
         }
 
-        
 
-        private static List<Figure> list;
 
-        internal static ref List<Figure> getList()
+        private static Dictionary<string, Figure> dict;
+
+        internal static ref Dictionary<string, Figure> getDict()
         {
-            return ref list;
+            return ref dict;
+        }
+
+        internal static void addFigure(Figure f)
+        {
+            dict.Add(f.ToString(), f);
         }
 
     }
