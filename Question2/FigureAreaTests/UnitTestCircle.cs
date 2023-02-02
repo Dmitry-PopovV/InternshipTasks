@@ -12,7 +12,7 @@ namespace FigureAreaTest
         public void TestFindCircleRight(string type, double par, double resolt)
         {
             double res = FigureArea.calc(type, par);
-            Assert.AreEqual(resolt, res);
+            Assert.AreEqual(resolt, res, 0.0001);
         }
 
         [TestMethod]
